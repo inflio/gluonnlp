@@ -17,7 +17,7 @@
 """LSTM projection cell with cell clip and projection clip."""
 __all__ = ['LSTMPCellWithClip']
 
-from mxnet.gluon.contrib.rnn import LSTMPCell
+from mxnet.gluon.rnn import LSTMPCell
 
 
 class LSTMPCellWithClip(LSTMPCell):
@@ -97,7 +97,7 @@ class LSTMPCellWithClip(LSTMPCell):
         self._projection_clip = projection_clip
 
     # pylint: disable= arguments-differ
-    def hybrid_forward(self, F, inputs, states, i2h_weight,
+    def forward(self, F, inputs, states, i2h_weight,
                        h2h_weight, h2r_weight, i2h_bias, h2h_bias):
         r"""Hybrid forward computation for Long-Short Term Memory Projected network cell
         with cell clip and projection clip.

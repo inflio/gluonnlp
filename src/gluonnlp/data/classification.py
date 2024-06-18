@@ -20,7 +20,7 @@ __all__ = [
 ]
 
 from copy import copy
-from mxnet.metric import Accuracy, F1, MCC, PearsonCorrelation, CompositeEvalMetric
+from mxnet.gluon.metric import Accuracy, F1, MCC, PearsonCorrelation, CompositeEvalMetric
 from .glue import GlueCoLA, GlueSST2, GlueSTSB, GlueMRPC
 from .glue import GlueQQP, GlueRTE, GlueMNLI, GlueQNLI, GlueWNLI
 from .baidu_ernie_data import BaiduErnieXNLI, BaiduErnieChnSentiCorp, BaiduErnieLCQMC
@@ -100,9 +100,9 @@ class MRPCTask(GlueTask):
     >>> MRPC.class_labels
     ['0', '1']
     >>> type(MRPC.metrics.get_metric(0))
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> type(MRPC.metrics.get_metric(1))
-    <class 'mxnet.metric.F1'>
+    <class 'mxnet.gluon.metric.F1'>
     >>> MRPC.dataset_train()[0]
     -etc-
     'train'
@@ -145,9 +145,9 @@ class QQPTask(GlueTask):
     >>> QQP.class_labels
     ['0', '1']
     >>> type(QQP.metrics.get_metric(0))
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> type(QQP.metrics.get_metric(1))
-    <class 'mxnet.metric.F1'>
+    <class 'mxnet.gluon.metric.F1'>
     >>> import warnings
     >>> with warnings.catch_warnings():
     ...     # Ignore warnings triggered by invalid entries in GlueQQP set
@@ -189,7 +189,7 @@ class RTETask(GlueTask):
     >>> RTE.class_labels
     ['not_entailment', 'entailment']
     >>> type(RTE.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> RTE.dataset_train()[0]
     -etc-
     'train'
@@ -231,7 +231,7 @@ class QNLITask(GlueTask):
     >>> QNLI.class_labels
     ['not_entailment', 'entailment']
     >>> type(QNLI.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> QNLI.dataset_train()[0]
     -etc-
     'train'
@@ -272,7 +272,7 @@ class STSBTask(GlueTask):
     >>> STSB = STSBTask()
     >>> STSB.class_labels
     >>> type(STSB.metrics)
-    <class 'mxnet.metric.PearsonCorrelation'>
+    <class 'mxnet.gluon.metric.PearsonCorrelation'>
     >>> STSB.dataset_train()[0]
     -etc-
     'train'
@@ -314,7 +314,7 @@ class CoLATask(GlueTask):
     >>> CoLA.class_labels
     ['0', '1']
     >>> type(CoLA.metrics)
-    <class 'mxnet.metric.MCC'>
+    <class 'mxnet.gluon.metric.MCC'>
     >>> CoLA.dataset_train()[0]
     -etc-
     'train'
@@ -356,7 +356,7 @@ class SSTTask(GlueTask):
     >>> SST.class_labels
     ['0', '1']
     >>> type(SST.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> SST.dataset_train()[0]
     -etc-
     'train'
@@ -398,7 +398,7 @@ class WNLITask(GlueTask):
     >>> WNLI.class_labels
     ['0', '1']
     >>> type(WNLI.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> WNLI.dataset_train()[0]
     -etc-
     'train'
@@ -440,7 +440,7 @@ class MNLITask(GlueTask):
     >>> MNLI.class_labels
     ['neutral', 'entailment', 'contradiction']
     >>> type(MNLI.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> MNLI.dataset_train()[0]
     -etc-
     'train'
@@ -513,7 +513,7 @@ class XNLITask(GlueTask):
     >>> XNLI.class_labels
     ['neutral', 'entailment', 'contradiction']
     >>> type(XNLI.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> XNLI.dataset_train()[0]
     'train'
     >>> len(XNLI.dataset_train()[1])
@@ -581,7 +581,7 @@ class ChnSentiCorpTask(GlueTask):
     >>> ChnSentiCorp.class_labels
     ['0', '1']
     >>> type(ChnSentiCorp.metrics)
-    <class 'mxnet.metric.Accuracy'>
+    <class 'mxnet.gluon.metric.Accuracy'>
     >>> ChnSentiCorp.dataset_train()[0]
     'train'
     >>> len(ChnSentiCorp.dataset_train()[1])
