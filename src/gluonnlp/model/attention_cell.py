@@ -23,7 +23,7 @@ import numpy as np
 import mxnet as mx
 from mxnet.gluon.block import HybridBlock
 from mxnet.gluon import nn
-from mxnet.contrib.amp import amp
+from mxnet.amp import amp
 from .block import L2Normalization
 
 
