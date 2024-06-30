@@ -17,7 +17,7 @@
 """LSTM projection cell with cell clip and projection clip."""
 __all__ = ['LSTMPCellWithClip']
 
-from mxnet.gluon.rnn import LSTMPCell
+from mxnet.gluon.contrib.rnn import LSTMPCell
 
 
 class LSTMPCellWithClip(LSTMPCell):
